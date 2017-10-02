@@ -3,7 +3,7 @@
 # **BotChehara**
 
 
-** BotChehara - The Bot Who Could Not Forget.  **
+ **BotChehara - The Bot Who Could Not Forget**  
 
 BotChehara is a Slack Bot that recognizes pictures of celebrities, famous landmarks and extracts texts from pictures of documents. Chehara is Hindi for Face. BotChehara was inspired by the SMSBot *faces* (see: http://github.com/skarlekar/faces). 
 
