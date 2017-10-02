@@ -26,6 +26,11 @@ As a result,  the application components are provisioned on-demand and brought d
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/BotCheharaArchitecture.png)
 
+The above picture illustrates the high-level architecture of the application. Details are as follows:
+
+ 1. When the user installs our slack bot in their workspace, Slack will send a temporary authorization code. This authorization code is short-lived and can only be used to get a permanent access token. The *Slack Installer* Lambda function will use this authorization code to get a permanent access-token for the team along with other pertinent information regarding the team and store it in a Dynamo DB table. If the operation is successful or results in an error,  the Lambda returns a 302 HTTP code to have Slack redirect the user to a success/failure page.
+ 2. 
+
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
 More documentation to follow soon.
