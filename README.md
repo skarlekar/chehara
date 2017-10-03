@@ -81,8 +81,9 @@ One of the advantages of using the Step Function here is, you can add new type o
   <img src="https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png" alt="Step Function Detail"/>
 </p>
 
+<p align="center">
 ![Step Function Detail](https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png)
-
+</p>
 
 #### Celebrity Detector
 
