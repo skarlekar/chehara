@@ -24,13 +24,13 @@ The BotChehara application uses AWS API Gateway, AWS Step Function and Lambdas f
 
 As a result,  the application components are provisioned on-demand and brought down after usage resulting in a low-cost, highly-scalable application.
 
-![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/BotCheharaArchitecture.png)
+![CheharaBot Architecture Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/BotCheharaArchitecture.png)
 
 The above picture illustrates the high-level architecture of the application. Details are as follows:
 
 ## Slack-bot Installation Flow
 
-This flow is illustrated using red color arrows in the diagram above.
+The following sequence diagram illustrates the Slack-bot Installation flow. This flow is also illustrated using red color arrows in the architecture diagram above.
 
 ![Installation Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/Installation%20Flow.png)
 1. To use our bot, the user has to be install the bot in their Slack Workspace. 
@@ -47,7 +47,9 @@ This flow is illustrated using red color arrows in the diagram above.
  
 ## Slack-bot Event Flow
 
-The event processing flow is depicted using the blue color arrows in the above architecture diagram and consists of multiple steps as described below:
+The following sequence diagram depicts the event flow process. The event processing flow is also depicted using the blue color arrows in the above architecture diagram and consists of multiple steps as described below:
+
+![BotChehara Event Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/EventHandlerFlowFull.png)
 
 ### Slack Event Handler
 
