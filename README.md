@@ -73,9 +73,40 @@ To get notified of events happening in the channels that our bot is invited to, 
 
 #### Orchestrator
 
+The Orchestrator is a StepFunction that farms out the detection of content in the image to various image content detectors. Right now, the bot can detect celebrities, landmarks and text in the given image. The image content detectors are  Lambda functions that employs various AIaaS service such as Google Vision and AWS Rekognition.
+
+One of the advantages of using the Step Function here is, you can add new type of detectors in a plug-n-play fashion. For instance, you can add a detector to detect your friends in images. Hint: Review the [CelebritySleuth](https://github.com/skarlekar/faces) project to figure out how to do this.
+
 ![Step Function Detail](https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png)
 
-1. The Orchestrator is a StepFunction that 
+
+#### Celebrity Detector
+
+For detecting Celebrities, the bot employs AWS Rekogniton. Amazon Rekognition is a service that makes it easy to add image analysis to your applications. With Rekognition, you can detect objects, scenes, and faces in images. You can also search and compare faces. 
+
+The Celebrity Detector uses a Lambda function to call the AWS Rekognition service with the right credentials to get a report of the image content. If the image does not contain a face, or if the face is not a recognized face, the result is discarded. 
+
+On the other hand, if a face of a celebrity is detected, it gets the name of the celebrity, the confidence in the match and biography URL to construct the report.
+
+The event is then enriched with this content and passed down through the Step Function.
+
+Note: In my testing, only Azure Vision and AWS Rekognition is able to detect celebrities without training. As of this writing, Google Vision is not able to do that. 
+
+#### Landmark Detector
+
+When given an image of a famous landmark, AWS Rekognition will detect it as a monument or architecture, but it is not able to pin point the name of the landmark. This is where Google Vision shines through. Google Vision can not only pin point the landmark, it also provides the geo location of the landmark.
+
+The Landmark Detector in this bot is a Lambda function that calls Google Vision API with an API key  and image contents to get the report.
+
+If the report contains landmark information, it extracts the data and constructs a report. The input event is then enriched with the report and the content is passed down through the Step Function.
+
+#### Text Detector
+
+Similar to the landmark detection, Google Vision is the only viable AIaaS service that I found that can detect text, recognize characters and construct the sentence. In my testing, I found that Google Vision is not able to recognize text in languages other than English. 
+
+Similar to the other detectors, the Text Detector in this bot is a Lambda function that calls Google Vision API with an API key and image contents to get the report.
+
+If the report contains text information, it will extract the text and  enrich the input event with the report. This event is then passed down the chain in the Step Function.
 
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
