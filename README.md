@@ -81,10 +81,6 @@ One of the advantages of using the Step Function here is, you can add new type o
   <img src="https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png" alt="Step Function Detail"/>
 </p>
 
-<p align="center">
-![Step Function Detail](https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png)
-</p>
-
 #### Celebrity Detector
 
 For detecting Celebrities, the bot employs AWS Rekogniton. Amazon Rekognition is a service that makes it easy to add image analysis to your applications. With Rekognition, you can detect objects, scenes, and faces in images. You can also search and compare faces. 
