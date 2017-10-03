@@ -1,0 +1,11 @@
+title BotChehara Installation Flow
+
+User->+BotHomePage: Add Bot to Workspace
+BotHomePage->+Slack: Install Request
+Slack->+BotInstaller: Notify Request with temp Code
+BotInstaller->+Slack: Request Access Token with Code
+Slack-->-BotInstaller: Access Token & Team Data
+BotInstaller->DynamoDB: Save Token & Team Data
+BotInstaller-->-Slack: HTTP 302 & Status code
+Slack-->-BotHomePage: Status
+BotHomePage-->-User: Status

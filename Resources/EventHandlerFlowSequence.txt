@@ -1,0 +1,7 @@
+title BotChehara Event Handler Flow
+
+User->Slack: Upload Image
+Slack->+Event Handler: Event 
+Event Handler->Orchestrator: Process Event
+Event Handler-->-Slack: 200-OK (Within 3 secs)
+Slack->User: Detection Results
