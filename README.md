@@ -57,8 +57,6 @@ The *Slack Event Handler* is a Lambda function that handles URL verifications an
 
 To get notified of events happening in the channels that our bot is invited to,  our bot application on Slack will be configured with an event handler endpoint. Event sent to this endpoint is handled by Slack Event Handler. 
 
-![Event Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/EventHandlerFlowFull.png)
-
 #### Handling Slack Challenge 
 
 1. Before using our URL endpoint to send events that our bot is subscribed to, Slack will verify if the URL is valid and belongs to us by sending a challenge token in the body of the request. The Slack Event Handler responds to the challenge by sending back the challenge token in the response.
@@ -69,10 +67,15 @@ To get notified of events happening in the channels that our bot is invited to, 
 
 #### Handling Slack Events
 
-1.  The Slack bot is subscribed to all messages that is being communicated on the channel the bot is invited to. As the bot is only interested in images, it will filter out all other messages and only handle messages that contains an image.
+1.  The Slack bot is subscribed to all messages that is being communicated on the channel the bot is invited to. As the bot is only interested in file uploads, it will filter out all other messages and only handle messages that is a result of a file share.
  
-2.  As image detection may run over the three second time limit, the bot invokes a step function asynchronously to process the events before returning the 200-OK response.
+2.  As image detection may run over the three second time limit, the bot invokes a step function asynchronously to process the filtered events before returning the 200-OK response.
 
+#### Orchestrator
+
+![Step Function Detail](https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png)
+
+1. The Orchestrator is a StepFunction that 
 
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
