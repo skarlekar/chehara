@@ -115,6 +115,38 @@ If the report contains text information, it will extract the text and  enrich th
 2. Google Vision fails to detect text if the text content is skewed. ie., the text has to be laid out horizontally in the image.
 3. Some images contain extraneous text that is not visible to the naked eye. This data comes out as textual content which has beleaguered me. Could this be watermark data? I could not tell.
 
+# Setup Instructions
+
+## Installing Python
+If you are on a Mac or Linux machine, you probably already have Python installed. On Windows you have to install Python. 
+
+Regardless of your operating system, you are better off using a virtual environment for running Python. [Anaconda](https://www.continuum.io/downloads) or its terse version [Miniconda](https://conda.io/miniconda.html) is a Python virtual environment that allows you to manage various versions and environments of Python. The installers come with Python and the package manager *conda* with it. Follow the instructions [here](https://conda.io/docs/install/quick.html) to install Miniconda. For this project we will use Python 2.7.
+
+### Creating a Python Virtual Environment.
+After installing Python 2.7, create an virtual environment as follows. Note:  I am calling my virtual environment *chehara*:
+   
+    $ conda create -n chehara python=2
+    
+#### Initialize your Python Virtual Environment
+To start working in your new Python virtual environment:
+
+    $ source activate chehara
+
+If you are working in Windows, use:
+
+    $ activate chehara
+
+## Install Git
+Git is a popular code revision control system. To install Git for your respective operating system follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+## Install *BotChehara* 
+To install BotChehara from Git, follow the instructions below:
+
+    $ mkdir DevFestDC
+    $ cd DevFestDC
+    $ git clone --recursive https://github.com/skarlekar/chehara.git
+
+
 # Footnotes:
 <a name="aiaas">1</a>: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
