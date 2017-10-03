@@ -1,4 +1,4 @@
-﻿
+
 
 # **BotChehara**
 
@@ -145,6 +145,130 @@ To install BotChehara from Git, follow the instructions below:
     $ mkdir DevFestDC
     $ cd DevFestDC
     $ git clone --recursive https://github.com/skarlekar/chehara.git
+
+## Install ObjectPath
+ObjectPath is a JSON query language and tool. To install ObjectPath, follow the instructions below:
+
+    $pip install objectpath
+
+### Testing ObjectPath
+If ObjectPath is correctly installed in your Python virtual environment, when you type ObjectPath in your command line, you should see the interactive environment as follows:
+
+    srini-macbookpro:chehara skarlekar$ objectpath ObjectPath interactive shell ctrl+c to exit, documentation at http://adriank.github.io/ObjectPath.
+    
+    JSON document source not specified. Working with an empty object {}.
+    >>>
+
+Exit by pressing Control-C.
+
+### Using ObjectPath
+You can use ObjectPath using the ObjectPath libraries in your Python code or test your JSON queries in the interactive shell. 
+
+Let us try an example. I have checked in a file call *book-shop.json*. Let us use that to practice some simple queries.
+
+At the command prompt, enter:
+
+    $ objectpath book-shop.json
+
+This should take you to the interactive shell with the book-shop.json as the input document. Let us try a few queries:
+
+Simple queries starts with $ character. It indicates the root of the document. To show the whole document type:
+
+    $*
+
+ObjectPath is like paths to files in your operating system. To show only the *book* fragment under the *store*, type:
+
+    $.store.book
+
+You can select a specific element from it as follows:
+
+    $.store.book[1] # get the second book. Why?
+    $.store.book[-1] # get the last book. How?
+
+We can also get specific elements based on their properties:
+
+    $.store.book[@.price is 8.95] # get books of price 8.95
+
+Here ***@*** points to the current element from books. In other words, ***[*** iterates over the array of books and for each element checks if condition inside square parenthesis is met. ***@*** tells ObjectPath that price is an property of each book, not a string.
+
+To make it even more interesting we can filter it even further by getting only the specific fields from results:
+
+    $.store.book[@.price is 8.95].(price, author)
+
+When we don't know where in the document are prices, we can search for all of them by:
+
+    $..price # searches for any attribute named price in the document
+    $..price[@ > 8.95] # returns all prices greater than 8.95
+
+In the last example we used @ to indicate current element of an array of prices.
+
+You can also create new JSON documents as shown below:
+
+    { 'fictions' : $.store.book[@.category is 'fiction'] }
+
+This should create a new fictions JSON and populate it with books whose category is fiction.
+
+For further reference, go to [ObjectPath](http://objectpath.org/reference.html) documentation.
+
+## Amazon AWS Setup
+1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
+2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+
+## Install node.js and Serverless framework
+Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework. 
+
+Ensure your Serverless framework is operational using the following:
+
+    $ serverless --version
+
+## Testing your Serverless Setup
+Now that you have setup AWS, it is time to test your Serverless setup by creating a mock function using the Serverless framework.
+
+Create a test directory. In the test directory, create a Lambda function from the default template as follows:
+
+    $ mkdir sls-tester
+    $ cd sls-tester
+    $ sls create --template aws-python --name sls-test
+    
+This should create two files in the current directory:
+
+> serverless.yml
+> 
+> handler.py
+
+The *serverless.yml* declares a sample service and a function. The *handler.py*  returns a message stating that your function executed successfully. 
+
+To deploy the function, simply type:
+
+    $ sls deploy --verbose
+
+This should deploy the function. The verbose option provides extra information.
+
+To test your function, type:
+
+    $ sls invoke --function hello
+
+If you get the following message, your Serverless setup is working.
+
+      WARNING: You are running v1.9.0. v1.10.0 will include the following breaking changes:
+        - Some lifecycle events for the deploy plugin will move to a new package plugin. More info -> https://git.io/vy1zC
+    
+      You can opt-out from these warnings by setting the "SLS_IGNORE_WARNING=*" environment variable.
+    
+    {
+        "body": "{\"input\": {}, \"message\": \"Go Serverless v1.0! Your function executed successfully!\"}",
+        "statusCode": 200
+    }
+
+To check the logs for your function, type:
+
+    $ sls logs -f hello
+
+To keep a continuous check of the logs for your function, type:
+
+    $ sls logs -f hello -t
+
+## Google Cloud Setup
 
 
 # Footnotes:
