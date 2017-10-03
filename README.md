@@ -77,6 +77,10 @@ The Orchestrator is a StepFunction that farms out the detection of content in th
 
 One of the advantages of using the Step Function here is, you can add new type of detectors in a plug-n-play fashion. For instance, you can add a detector to detect your friends in images. Hint: Review the [CelebritySleuth](https://github.com/skarlekar/faces) project to figure out how to do this.
 
+<p align="center">
+  <img src="https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png" alt="Step Function Detail"/>
+</p>
+
 ![Step Function Detail](https://github.com/skarlekar/chehara/blob/master/Resources/CheharaStepFunction.png)
 
 
