@@ -108,6 +108,12 @@ Similar to the other detectors, the Text Detector in this bot is a Lambda functi
 
 If the report contains text information, it will extract the text and  enrich the input event with the report. This event is then passed down the chain in the Step Function.
 
+**Findings**: In my testing I found the following drawbacks in the Google Vision service for detecting text:
+
+1. Google Vision is not able to recognize text in languages other than English.
+2. Google Vision fails to detect text if the text content is skewed. ie., the text has to be laid out horizontally in the image.
+3. Some images contain extraneous text that is not visible to the naked eye. This data comes out as textual content which has beleaguered me. Could this be watermark data? I could not tell.
+
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
 More documentation to follow soon.
