@@ -210,7 +210,7 @@ This should create a new fictions JSON and populate it with books whose category
 
 For further reference, go to [ObjectPath](http://objectpath.org/reference.html) documentation.
 
-## Amazon AWS Setup
+## Setup Amazon AWS 
 1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
 2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
@@ -268,8 +268,15 @@ To keep a continuous check of the logs for your function, type:
 
     $ sls logs -f hello -t
 
-## Google Cloud Setup
+## Setup Google Cloud
 
+## Setup Slack
+
+## Setup BotChehara
+
+## Using BotChehara
+
+## Application in Action
 
 # Footnotes:
 <a name="aiaas">1</a>: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
