@@ -28,8 +28,24 @@ As a result,  the application components are provisioned on-demand and brought d
 
 The above picture illustrates the high-level architecture of the application. Details are as follows:
 
- 1. When the user installs our slack bot in their workspace, Slack will send a temporary authorization code. This authorization code is short-lived and can only be used to get a permanent access token. The *Slack Installer* Lambda function will use this authorization code to get a permanent access-token for the team along with other pertinent information regarding the team and store it in a Dynamo DB table. If the operation is successful or results in an error,  the Lambda returns a 302 HTTP code to have Slack redirect the user to a success/failure page.
- 2. 
+## Slack-bot Installation Flow
+
+This flow is illustrated using red color arrows in the diagram above.
+
+1. To use our bot, the user has to be install the bot in their workspace. 
+
+2. Installation begins when the user clicks the *#Add to Slack* button in the installation page.
+
+3. When the user installs our slack bot in their workspace, Slack will send a temporary authorization code. This authorization code is short-lived and can only be used to get a permanent access token. 
+
+4. The *Slack Installer* Lambda function will use this authorization code to get a permanent access-token for the team along with other pertinent information regarding the team and store it in a Dynamo DB table. 
+
+5. If the operation is successful,  the Lambda returns a 302 HTTP code and success code to have Slack redirect the user to a success page. 
+
+6. On the other hand, if the operation fails, the Lambda returns a 302 HTTP code and failure code to have Slack redirect the user to an error page. 
+ 
+
+
 
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
