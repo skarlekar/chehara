@@ -44,7 +44,27 @@ This flow is illustrated using red color arrows in the diagram above.
 
 6. On the other hand, if the operation fails, the Lambda returns a 302 HTTP code and failure code to have Slack redirect the user to an error page. 
  
+## Slack-bot Event Flow
 
+The event processing flow is depicted using the blue color arrows in the above architecture diagram and consists of multiple steps as described below:
+
+### Slack Event Handler
+
+The *Slack Event Handler* is a Lambda function that handles URL verifications and other events from Slack.
+
+To get notified of events happening in the channels that our bot is invited to,  our bot application on Slack will be configured with an event handler endpoint. Event sent to this endpoint is handled by Slack Event Handler. 
+
+#### Handling Slack Challenge 
+
+1. Before using our URL endpoint to send events that our bot is subscribed to, Slack will verify if the URL is valid and belongs to us by sending a challenge token in the body of the request. The Slack Event Handler responds to the challenge by sending back the challenge token in the response.
+
+2. Additionally, every event notification from Slack contains a verification token. The Slack Event Handler confirms that this verification token belongs to the bot by comparing the verification token that was sent with a private verification token that it was preconfigured with.
+
+#### Handling Slack Events
+
+1.  The Slack bot is subscribed to all messages that is being communicated on the channel the bot is invited to. As the bot is only interested in images, it will filter out all other messages and only handle messages that contains an image.
+2.  Irrespective of the type of event, Slack expects a 200-OK response to any event that it is notified of at the endpoint within three seconds.  
+3.  As image detection may run over the three second time limit, the bot invokes a step function asynchronously to process the events before returning the 200-OK response.
 
 
 [^aiaas]: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
