@@ -1,0 +1,19 @@
+title BotChehara Event Flow
+
+User->Slack: Upload Image
+Slack->+Event Handler: Event 
+Event Handler->+Orchestrator: Orchestrate Event
+Event Handler-->-Slack: 200-OK (Within 3 secs)
+Orchestrator->+Event Processor:Process Event
+Event Processor->+DynamoDB: Get Access Token
+DynamoDB-->-Event Processor:Team Data
+Event Processor-->-Orchestrator:Enriched Event
+Orchestrator->+Various Detectors:Detect Content in Image (Image Url, Access Token)
+Various Detectors->+Slack: Get Image (Image Url, Access Token)
+Slack-->-Various Detectors:Image Data
+Various Detectors->+AIaaS: Detect Content (Image)
+AIaaS-->-Various Detectors: Content Report
+Various Detectors-->-Orchestrator: Content Report
+Orchestrator->+Message Poster: Merge Reports & Post to Slack Channel
+Message Poster->Slack:Image Content Report
+Slack-->-User: Detection Results
