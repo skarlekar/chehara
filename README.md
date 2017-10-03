@@ -24,7 +24,7 @@ The BotChehara application uses AWS API Gateway, AWS Step Function and Lambdas f
 
 As a result,  the application components are provisioned on-demand and brought down after usage resulting in a low-cost, highly-scalable application.
 
-![enter image description here](https://github.com/skarlekar/chehara/blob/master/BotCheharaArchitecture.png)
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/BotCheharaArchitecture.png)
 
 The above picture illustrates the high-level architecture of the application. Details are as follows:
 
@@ -32,6 +32,7 @@ The above picture illustrates the high-level architecture of the application. De
 
 This flow is illustrated using red color arrows in the diagram above.
 
+![Installation Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/Installation%20Flow.png)
 1. To use our bot, the user has to be install the bot in their workspace. 
 
 2. Installation begins when the user clicks the *#Add to Slack* button in the installation page.
@@ -56,11 +57,7 @@ To get notified of events happening in the channels that our bot is invited to, 
 
 #### Handling Slack Challenge 
 
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
+
 
 1. Before using our URL endpoint to send events that our bot is subscribed to, Slack will verify if the URL is valid and belongs to us by sending a challenge token in the body of the request. The Slack Event Handler responds to the challenge by sending back the challenge token in the response.
 
