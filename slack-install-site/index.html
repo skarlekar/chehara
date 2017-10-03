@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>BotChehara - A Slack Bot That Cannot Forget</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <header>
+  <nav class="light-blue lighten-3" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Bot Chehara &trade;</a>
+    </div>
+  </nav>
+  </header>
+  <main>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h3 class="header center teal-text text-lighten-2">Bot Chehara - A Slack Bot That Cannot Forget!</h3>
+      <div class="row center">
+        <h5 class="header col s12 light">A 100% Serverless Slack Bot</h5>
+      </div>
+      <div class="row center">
+        <a href="https://slack.com/oauth/authorize?scope=bot&client_id=245911183507.246876171814">
+          <img alt="Add to Slack" height="40" width="139"
+          src="https://platform.slack-edge.com/img/add_to_slack.png"
+          srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x,
+          https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text text-lighten-4"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Serverless</h5>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text text-lighten-4"><i class="material-icons">build</i></h2>
+            <h5 class="center">Lambda</h5>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text text-lighten-4"><i class="material-icons">face</i></h2>
+            <h5 class="center">AWS Rekognition</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+  </main>
+
+  <footer class="page-footer orange darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col 12 s12">
+          <h5 class="white-text">Faces, Landmarks - No Problem. Bring it on!</h5>
+          <p class="grey-text text-lighten-4">Invite BotChehara to any channel. When an image is added, the bot works it magic.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      <span class="right">Emoji provided free by <a class="orange-text text-lighten-3" href="http://emojione.com">EmojiOne</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="successModal" class="modal green">
+    <div class="modal-content">
+      <h4>Success!</h4>
+      <p>BotChehara was successfully installed to your Slack Team</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close green-text text-lighten-1 waves-effect waves-green btn-flat">Awesome</a>
+    </div>
+  </div>
+
+  <div id="errorModal" class="modal red">
+    <div class="modal-content">
+      <h4>Ruh Roh!</h4>
+      <p>There was an error installing BotChehara to your Slack Team, please try again.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close red-text text-lighten-1 waves-effect waves-red btn-flat">Bummer, dude</a>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

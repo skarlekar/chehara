@@ -1,0 +1,165 @@
+
+service: chehara
+
+custom:
+  namespace: ${self:service}-${self:custom.stage}
+  stage: ${opt:stage, self:provider.stage}
+
+provider:
+  name: aws
+  runtime: python2.7
+  stage: dev
+  timeout: 60
+  environment:
+    NAMESPACE: ${self:custom.namespace}
+    SLACK_TEAMS: ${self:custom.namespace}-slackteams
+    CLIENT_ID: ${env:SLACK_CLIENT_ID}
+    CLIENT_SECRET: ${env:SLACK_CLIENT_SECRET}
+    GCP_API_KEY: ${env:GCP_API_KEY}
+    VERIFICATION_TOKEN: ${env:SLACK_VERIFICATION_TOKEN}
+    INSTALL_SUCCESS_URL: https://s3.amazonaws.com/serverless-face-bot/index.html#success
+    INSTALL_ERROR_URL: https://s3.amazonaws.com/serverless-face-bot/index.html#error
+    STATEMACHINE_ARN: ${self:resources.Outputs.MyStateMachine.Value}
+    #STATEMACHINE_ARN: arn:aws:states:us-east-1:099098322104:stateMachine:MyStateMachine-MSZFQETBPA4D
+  region: us-east-1
+  iamRoleStatements:
+    # - Effect: 'Allow'
+    #   Action: # Gives permission to SNS topics in a specific region
+    #     - 'sns:ListTopics'
+    #     - 'sns:Publish'
+    #   Resource: "arn:aws:sns:us-east-1:*:*"
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+      Resource:
+        - arn:aws:dynamodb:*:*:table/${self:provider.environment.SLACK_TEAMS}
+    - Effect: 'Allow'
+      Action: # Gives permission to AWS Rekognition in all regions
+        - 'rekognition:*'
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - "states:StartExecution"
+      Resource:
+        - "*"
+
+functions:
+  installSlack:
+    handler: install_slack.process
+    description: This Lambda will be called when a user installs our bot for the first time.
+    tags:
+      project: chehara
+    events:
+      - http:
+          path: install
+          method: get
+  handleEvents:
+    handler: handle_events.process
+    description: This Lambda will be called whenever Slack calls our API Gateway webhook on an event.
+    tags:
+      project: chehara
+    events:
+      - http:
+          path: events
+          method: post
+  processEvents:
+    handler: process_events.process
+    description: This Lambda will be invoked by the StepFunction to start the processing of event.
+    tags:
+      project: chehara
+  detectCelebrity:
+    handler: detect_celebrity.process
+    description: This Lambda will be invoked by the StepFunction to detect celebrities in the given image.
+    tags:
+      project: chehara
+  detectLandmark:
+    handler: detect_landmark.process
+    description: This Lambda will be invoked by the StepFunction to detect landmarks in the given image.
+    tags:
+      project: chehara
+  detectText:
+    handler: detect_text.process
+    description: This Lambda will be invoked by the StepFunction to detect text in the given image.
+    tags:
+      project: chehara
+  postMessage:
+    handler: post_message.process
+    description: This Lambda will be invoked by the StepFunction to post the results of detection in the Slack channel.
+    tags:
+      project: chehara
+    # events:
+    #   - sns: process_slack_event
+
+stepFunctions:
+  stateMachines:
+    imageSleuthStepMachine:
+      name: myStateMachine
+      definition:
+        Comment: "A StepFunction that farms out image recognition through various services"
+        StartAt: ProcessSlackEvent
+        States:
+          ProcessSlackEvent:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-processEvents"
+            Comment: "Farm out detection tasks to various AI services"
+            Next: Parallel
+          Parallel:
+            Type: Parallel
+            Branches:
+              - StartAt: DetectCelebrity
+                States:
+                  DetectCelebrity:
+                    Type: Task
+                    Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-detectCelebrity"
+                    Comment: "Call AWS Rekognition to detect celebrities in the given image"
+                    TimeoutSeconds: 60
+                    End: true
+              - StartAt: DetectLandmark
+                States:
+                  DetectLandmark:
+                    Type: Task
+                    Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-detectLandmark"
+                    Comment: "Call Google Vision API to detect landmarks in the given image"
+                    TimeoutSeconds: 60
+                    End: true
+              - StartAt: DetectText
+                States:
+                  DetectText:
+                    Type: Task
+                    Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-detectText"
+                    Comment: "Call Google Vision API to detect text in the given image"
+                    TimeoutSeconds: 60
+                    End: true
+            Next: PostMessage
+          PostMessage:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-postMessage"
+            Comment: "Consolidate results from various vision services and post message back to Slack channel"
+            TimeoutSeconds: 60
+            End: true
+
+resources:
+  Outputs:
+    MyStateMachine:
+      Description: Get a reference to the StepFunction in the MyStateMachine variable
+      Value:
+        Ref: MyStateMachine
+  Resources:
+    SlackDynamoDbTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.SLACK_TEAMS}
+        AttributeDefinitions:
+          - AttributeName: team_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: team_id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
