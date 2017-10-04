@@ -14,7 +14,7 @@ BotChehara is 100% Serverless AIaaS<sup>[1](#aiaas)</sup> micro-service built on
 
 You are a Developer or Solutions Architect wanting to learn how to build serverless applications that are auto-scaling, pay-per-execution and completely event-driven. You want to build applications that matters to business instead of spending time configuring, deploying and maintaining infrastructure. The boost in efficiency that the Serverless architecture promises is very compelling for you to ignore.
 
-As you are building this application, you will to use the Serverless Framework, Slack Web & Event API,  Boto3 - Amazon's AWS Python SDK and Google Vision API.
+As you are building this application, you will learn to use the Serverless Framework, Slack Web & Event API,  ObjectPath, Boto3 - Amazon's AWS Python SDK and Google Vision API.
 
 ----------
 
@@ -270,7 +270,27 @@ To keep a continuous check of the logs for your function, type:
 
 ## Setup Google Cloud
 
+1. Sign up for a new Google account at http://accounts.google.com. If you already have an account you can skip this step.
+2. Sign up for a Google Cloud trial at http://console.cloud.google.com/start. If you already have Google Cloud privileges on  your Google account, you can skip this step.
+3. Create a new project and call it BotProject.
+4. Select *Credentials* in *API & Services* section of the Google Cloud console.
+5. Under *Create Credentials*, create a new API key. **Make a note of this API key as you will need that in subsequent steps**.
+6. In the *API & Services* dashboard, enable *Google Cloud Vision API*.
+
 ## Setup Slack
+
+1. Go to https://slack.com/create#email and sign-up for a new workspace by entering in your email address.
+2. Confirm your email by entering the six-digit confirmation code sent to your email address.
+3. Provide your name and reason you are creating a workspace. 
+
+<p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-1.png'/> </p>
+
+4. Provide a name for your group. This name will be use to name your Slack workspace.
+<p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-2.png'/> </p>
+5. Choose an address you will use to sign into Slack. 
+<p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-3.png'/> </p>
+6. Skip the Invite section.
+7. Congratulations, your workspace is ready.
 
 ## Setup BotChehara
 
