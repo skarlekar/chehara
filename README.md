@@ -320,15 +320,31 @@ To start using Slack's API, create a Slack App. This will provide us the tokens 
 8. Once your Slack app is created, it is time to make note of your application credentials under the App Credentials section. Use this information to update the [setEnv.sh](https://github.com/skarlekar/chehara/blob/master/setEnv.sh) file.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-5.png)
  
-9. Install a 512x512 size PNG file as icon for your bot in the Display Information section.
+9. Install a 512x512 size PNG file as icon for your bot in the *Display Information* section.
  ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-7.png)
  
-10. Note: Do not click on Distribute App in the Manage Distribution section. We will do this using a custom button to manage the OAuth process.
+10. Note: Do not click on *Distribute App* in the *Manage Distribution* section. We will do this using a custom button to manage the OAuth process.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-6.png)
 
 Congratulations for creating your Slack application and obtaining its credentials.
 
 ### Add a Slack Bot User
+For the application to interact with our users in a conversation, we have to add a bot that will be managed from the cloud.  To do this we will add a Bot User to our application.  
+
+Follow the instructions below to add the Bot User:
+
+1. Make sure you are in the *apps* section of Slack.
+
+2. Choose the app created in the section above.
+
+3. Click on *Bot Users* in the side bar menu.
+
+4. In the *Bot User* page, click on *Add a Bot User* button.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Install-Bot-User-1.png)
+
+5. In the following page, the Display name and Default username comes pre-filled. 
+
+6. Click on *Add Bot User* to add a bot to your application.
 
 ### Create an Add to Slack Button
 
