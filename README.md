@@ -289,6 +289,7 @@ To keep a continuous check of the logs for your function, type:
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-2.png'/> </p>
 5. Choose an address you will use to sign into Slack. 
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-3.png'/> </p>
+
 6. Skip the Invite section.
 
 7. Congratulations, your workspace is ready.
