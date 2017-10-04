@@ -380,7 +380,18 @@ For users to invite our Bot to their channels and have the Bot talk to our servi
 
 ## Build & Deploy BotChehara
 
-1. 
+Now that the preliminary configuration of Slack is done, it is time to build and deploy our Bot.
+
+1. Open a terminal and go to the root of the repository where our Git is cloned.
+
+2. Ensure the setEnv.sh is updated with the proper credentials.
+
+3.  Type the following in the command prompt to build and deploy our services to AWS cloud.
+
+    sls deploy --verbose
+
+
+
 ## Using BotChehara
 
 ## Application in Action
