@@ -345,6 +345,9 @@ Follow the instructions below to add the Bot User:
 5. In the following page, the Display name and Default username comes pre-filled. 
 
 6. Click on *Add Bot User* to add a bot to your application.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Install-Bot-User-2.png)
+
+You have now associated a Bot User to your app. This Bot User will be the brain of your app.
 
 ### Create an Add to Slack Button
 
