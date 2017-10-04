@@ -376,6 +376,7 @@ For users to invite our Bot to their channels and have the Bot talk to our servi
 9. Install this website in a S3 bucket of your choice and make sure that the S3 bucket is configured to serve as a website.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-6.png)
 
+10. Make a note of the public URL for the index.html in your S3 bucket. You will need that shortly.
 
 ## Build & Deploy BotChehara
 
