@@ -279,6 +279,7 @@ To keep a continuous check of the logs for your function, type:
 
 ## Setup Slack
 
+### Create a Slack Work Space
 1. Go to https://slack.com/create#email and sign-up for a new workspace by entering in your email address.
 2. Confirm your email by entering the six-digit confirmation code sent to your email address.
 3. Provide your name and reason you are creating a workspace. 
@@ -287,15 +288,55 @@ To keep a continuous check of the logs for your function, type:
 
 4. Provide a name for your group. This name will be use to name your Slack workspace.
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-2.png'/> </p>
-5. Choose an address you will use to sign into Slack. 
+
+5. Choose an address you will use to sign into Slack. Note this down as you will use this to access your slack workspace.
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-3.png'/> </p>
 
 6. Skip the Invite section.
 
-7. Congratulations, your workspace is ready.
+Congratulations, your workspace is ready.
+
+### Create a Slack App
+To start using Slack's API, create a Slack App. This will provide us the tokens necessary for communicating with Slack. The following steps walks you through the process.
+
+1. Go to you Slack workspace using and click the dropdown next to your Slack workspace name.
+
+2. Select *Manage Apps* in the menu dropdown next to your Slack workspace name.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-1.png)
+
+3. In the *Manage Apps* page, click on *Build* to build a new application.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-2.png)
+
+4. In the *Build* page, click on *Start Building* button.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-3.png)
+
+5. In the *Create a Slack App* form, enter a name for your bot under the *App Name* field.
+
+6. In the Development Slack Workspace field, select the name of your workspace.
+
+7. Click on *Create App* to create your Slack application.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-4.png)
+
+8. Once your Slack app is created, it is time to make note of your application credentials under the App Credentials section. Use this information to update the [setEnv.sh](https://github.com/skarlekar/chehara/blob/master/setEnv.sh) file.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-5.png)
+ 
+9. Install a 512x512 size PNG file as icon for your bot in the Display Information section.
+ ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-7.png)
+ 
+10. Note: Do not click on Distribute App in the Manage Distribution section. We will do this using a custom button to manage the OAuth process.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-6.png)
+
+Congratulations for creating your Slack application and obtaining its credentials.
+
+### Add a Slack Bot User
+
+### Create an Add to Slack Button
+
+### 
 
 ## Setup BotChehara
 
+1. 
 ## Using BotChehara
 
 ## Application in Action
