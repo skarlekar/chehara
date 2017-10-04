@@ -350,10 +350,34 @@ Follow the instructions below to add the Bot User:
 You have now associated a Bot User to your app. This Bot User will be the brain of your app.
 
 ### Create an Add to Slack Button
+For users to invite our Bot to their channels and have the Bot talk to our service on the cloud in a secure manner using OAuth, we will have to create a button and a web-page. This button will then be used by our users to install the Bot in their workspace and invite our Bot into their channels. 
 
-### 
+1. Let us start by clicking on *Your Apps* page to ensure that you are in http://api.slack.com/apps page.
 
-## Setup BotChehara
+2. Scroll down to the Authentication section of this page.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-1.png)
+
+3. Click on the *Slack Button*. This will take us to the API docs for the Slack button.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-2.png)
+
+4. Scroll down to the *Add the Slack Button* section of the page. Ensure that the name of your Bot is selected in the Drop-down.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-3.png)
+
+5. Ensure that only the *bot* button is checked.
+
+6. Copy the code snippet that contains your client id.
+
+7. Go to the [slack-install-site/index.html](https://github.com/skarlekar/chehara/blob/master/slack-install-site/index.html) web-page and replace the section from line 30-34 with the copied code snippet. 
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-4.png)
+
+8. Create a S3 bucket and prepare it for static website hosting.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-5.png)
+
+9. Install this website in a S3 bucket of your choice and make sure that the S3 bucket is configured to serve as a website.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-6.png)
+
+
+## Build & Deploy BotChehara
 
 1. 
 ## Using BotChehara
