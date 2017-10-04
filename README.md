@@ -288,12 +288,13 @@ To keep a continuous check of the logs for your function, type:
 
 4. Provide a name for your group. This name will be use to name your Slack workspace.
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-2.png'/> </p>
+
 5. Choose an address you will use to sign into Slack. Note this down as you will use this to access your slack workspace.
 <p align='center'> <img src='https://github.com/skarlekar/chehara/blob/master/Resources/Slack-signup-3.png'/> </p>
 
 6. Skip the Invite section.
 
-7. Congratulations, your workspace is ready.
+Congratulations, your workspace is ready.
 
 ### Create a Slack App
 To start using Slack's API, create a Slack App. This will provide us the tokens necessary for communicating with Slack. The following steps walks you through the process.
@@ -319,11 +320,13 @@ To start using Slack's API, create a Slack App. This will provide us the tokens 
 8. Once your Slack app is created, it is time to make note of your application credentials under the App Credentials section. Use this information to update the [setEnv.sh](https://github.com/skarlekar/chehara/blob/master/setEnv.sh) file.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-5.png)
  
-9. Install a 512x512 size PNG file an icon for your bot in the Display Information section.
+9. Install a 512x512 size PNG file as icon for your bot in the Display Information section.
  ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-7.png)
  
 10. Note: Do not click on Distribute App in the Manage Distribution section. We will do this using a custom button to manage the OAuth process.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-6.png)
+
+Congratulations for creating your Slack application and obtaining its credentials.
 
 ### Add a Slack Bot User
 
