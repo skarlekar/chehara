@@ -1,1 +1,4 @@
 *.bakup
+.serverless
+.serverless/*
+

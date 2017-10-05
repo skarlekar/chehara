@@ -14,10 +14,10 @@
       "environment": {
         "NAMESPACE": "chehara-dev",
         "SLACK_TEAMS": "chehara-dev-slackteams",
-        "CLIENT_ID": "245911183507.246876171814",
-        "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+        "CLIENT_ID": "250476348977.252096348375",
+        "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
         "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-        "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+        "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
         "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
         "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
         "STATEMACHINE_ARN": {
@@ -246,7 +246,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-installSlack",
               "Handler": "install_slack.process",
@@ -270,10 +270,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -287,14 +287,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "InstallSlackLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "InstallSlackLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "InstallSlackLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be called when a user installs our bot for the first time."
             }
           },
@@ -305,7 +305,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-handleEvents",
               "Handler": "handle_events.process",
@@ -329,10 +329,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -346,14 +346,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HandleEventsLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "HandleEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HandleEventsLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be called whenever Slack calls our API Gateway webhook on an event."
             }
           },
@@ -364,7 +364,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-processEvents",
               "Handler": "process_events.process",
@@ -388,10 +388,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -405,14 +405,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ProcessEventsLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "ProcessEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ProcessEventsLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be invoked by the StepFunction to start the processing of event."
             }
           },
@@ -423,7 +423,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectCelebrity",
               "Handler": "detect_celebrity.process",
@@ -447,10 +447,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -464,14 +464,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectCelebrityLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "DetectCelebrityLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectCelebrityLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be invoked by the StepFunction to detect celebrities in the given image."
             }
           },
@@ -482,7 +482,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectLandmark",
               "Handler": "detect_landmark.process",
@@ -506,10 +506,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -523,14 +523,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectLandmarkLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "DetectLandmarkLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectLandmarkLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be invoked by the StepFunction to detect landmarks in the given image."
             }
           },
@@ -541,7 +541,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectText",
               "Handler": "detect_text.process",
@@ -565,10 +565,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -582,14 +582,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectTextLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "DetectTextLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectTextLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be invoked by the StepFunction to detect text in the given image."
             }
           },
@@ -600,7 +600,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-postMessage",
               "Handler": "post_message.process",
@@ -624,10 +624,10 @@
                 "Variables": {
                   "NAMESPACE": "chehara-dev",
                   "SLACK_TEAMS": "chehara-dev-slackteams",
-                  "CLIENT_ID": "245911183507.246876171814",
-                  "CLIENT_SECRET": "e36dcb61becc49b6e0fe9e010e0b9831",
+                  "CLIENT_ID": "250476348977.252096348375",
+                  "CLIENT_SECRET": "b558c840c041e90da952a03535c5afd4",
                   "GCP_API_KEY": "AIzaSyCphtFCEfnDjh318aTl5TZVWV-AKIrURQ4",
-                  "VERIFICATION_TOKEN": "oLoIoOKsbfxFnzlZWc35dhnG",
+                  "VERIFICATION_TOKEN": "FF9H9jGEyxftRtz76F6zRTYO",
                   "INSTALL_SUCCESS_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#success",
                   "INSTALL_ERROR_URL": "https://s3.amazonaws.com/serverless-face-bot/index.html#error",
                   "STATEMACHINE_ARN": {
@@ -641,14 +641,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "PostMessageLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do": {
+          "PostMessageLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PostMessageLambdaFunction"
               },
-              "CodeSha256": "n+5tzBcyX50Jc99Q5luI1ZD9NoYUiS+7LxMplwls8do=",
+              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
               "Description": "This Lambda will be invoked by the StepFunction to post the results of detection in the Slack channel."
             }
           },
@@ -811,7 +811,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1507064226622": {
+          "ApiGatewayDeployment1507164953658": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -922,43 +922,43 @@
           "InstallSlackLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "InstallSlackLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "InstallSlackLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "HandleEventsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HandleEventsLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "HandleEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "ProcessEventsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ProcessEventsLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "ProcessEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "DetectCelebrityLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectCelebrityLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "DetectCelebrityLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "DetectLandmarkLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectLandmarkLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "DetectLandmarkLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "DetectTextLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectTextLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "DetectTextLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "PostMessageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PostMessageLambdaVersionn5tzBcyX50Jc99Q5luI1ZD9NoYUiS7LxMplwls8do"
+              "Ref": "PostMessageLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
             }
           },
           "MyStateMachineArn": {
@@ -1217,7 +1217,7 @@
     "artifact": "/Users/skarlekar/Git Repos/chehara/.serverless/chehara.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/chehara/dev/1507064226508-2017-10-03T20:57:06.508Z",
+    "artifactDirectoryName": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z",
     "artifact": "chehara.zip"
   }
 }
