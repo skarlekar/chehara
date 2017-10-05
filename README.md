@@ -518,16 +518,21 @@ If the image has a picture of a well-known celebrity you will get their names an
 
 
 # Application in Action
-The following are some samples of the application in action.
+The following are some examples of the application in action.
 
-Sample 1:
+Celebrity Detection Example:
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-1.gif)
 
 
-Sample 2:
+Landmark Detection Example:
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-2.gif)
+
+
+Text Detection Example:
+
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-3.gif)
 
 ----------
 
