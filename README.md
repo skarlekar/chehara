@@ -410,15 +410,19 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 
 ## Test *#Add to Slack* Function
 1. To test the *#Add to Slack* functionality, you can either go to the *index.html* in your *slack-install-site* that you pushed to the S3 bucket or go the slack-button docs page as shown below.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-1.png)
 
 2. This should take you to a page where you authorize and confirm the identity of the Bot user you created earlier.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-2.png)
 
 3. If everything goes well, you should see a success message.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-3.png)
 
 4. You can now verify that your Bot user is added to your workspace. Go to your workspace and under Apps, you should see the Bot user you created.
+
  ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-4.png)
  
 5. You can also check the Lambda logs in your Serverless project directory at the command prompt by typing:
@@ -426,6 +430,7 @@ Now that the preliminary configuration of Slack is done, it is time to build and
     serverless logs -f installSlack
 
 6. In addition you can go to your DynamoDB table and verify a new Item was created in the *slack teams* table.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-5.png)
   
 ## Configure Event Webhook
@@ -442,10 +447,12 @@ For Slack to send notify the bot with events in the channels that it subscribed 
 	2. *Access the workspace’s files, comments, and associated information*
 
 2. Click the *Save Changes* button. You will get a notification to reinstall your app. Click the notification to reinstall your app and authorize the change. Your configuration should look like:
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/configure-web-event-1.png)
 
 ### Enable Events
 1. From your command line where you built & deployed the serverless framework, copy the POST method. This is the URL that ends with '*events*'.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/enable-events-1.png)
 
 2. Go to the *Event Subscriptions* section of your app and turn *Enable Events* to *on*.
@@ -457,6 +464,7 @@ For Slack to send notify the bot with events in the channels that it subscribed 
 5. In the *Subscribe to Bot Events* section, select the *message.channels ev*ent.
 
 6. Make sure you click on the *Save Changes* button.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/enable-events-2.png)
 
 ### Invite Bot
@@ -474,11 +482,22 @@ Go to the general channel in your Slack workspace. Upload or drag and drop a pic
 If the image has a picture of a well-known celebrity you will get their names and link to their biography. If there are famous landmarks, you should get the name of the landmark and a Google map link along with it.
 
 **Caution**: Make sure your image size is lesser than 5MB. Most of the cognitive services does not accept large images.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/bot-usage-1.png)
 
 ## Application in Action
 The following are some samples of the application in action.
+
+
+----------
+Sample 1:
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-1.gif)
+
+
+----------
+Sample 2:
+
 
 # Footnotes:
 <a name="aiaas">1</a>: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
