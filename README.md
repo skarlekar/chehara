@@ -384,13 +384,18 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 
 1. Open a terminal and go to the root of the repository where our Git is cloned.
 
-2. Ensure the setEnv.sh is updated with the proper credentials.
+2. Ensure the *setEnv.sh* is updated with the proper credentials. Now export you environment variables:
+
+    source ./setEnv.sh
 
 3.  Type the following in the command prompt to build and deploy our services to AWS cloud.
 
     sls deploy --verbose
 
+4. You should get an output that should state that the service was successfully published as shown below.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/build-and-deploy-chehara-1.png)
 
+5. Note down the Install endpoint which uses HTTP GET.
 
 ## Using BotChehara
 
