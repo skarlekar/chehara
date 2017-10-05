@@ -376,7 +376,10 @@ For users to invite our Bot to their channels and have the Bot talk to our servi
 9. Install this website in a S3 bucket of your choice and make sure that the S3 bucket is configured to serve as a website.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-6.png)
 
-10. Make a note of the public URL for the index.html in your S3 bucket. You will need that shortly.
+10. Make a note of the public URL for the *index.html* in your S3 bucket. 
+
+11. In your serverless.yml file update the *INSTALL_SUCCESS_URL* and *INSTALL_ERROR_URL* with the path to your *index.html*. Add *#success* at the end of the Success URL and *#error* at the end of the Error URL as shown below.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/serverless-yml-1.png)
 
 ## Build & Deploy BotChehara
 
@@ -396,6 +399,24 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/build-and-deploy-chehara-1.png)
 
 5. Note down the Install endpoint which uses HTTP GET.
+
+## Add Install URL to Slack
+1. With the install endpoint stashed in your clipboard, go to the *OAuth & Permissions* setting of your Slack App.
+
+2. In the *Redirect URLs* section, select *Add a new Redirect URL* and paste your install URL. Click on *Add* button.
+
+3. Finally, click on *Save URLs* to save the setting.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/install-url-1.png)
+
+## Test *#Add to Slack* Function
+1. To test the *#Add to Slack* functionality, you can either go to the *index.html* in your *slack-install-site* that you pushed to the S3 bucket or go the slack-button docs page as shown below.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-1.png)
+
+2. This should take you to a page where you authorize and confirm the identity of the Bot user you created earlier.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-2.png)
+
+3. If everything goes well, you should see a success message.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-3.png)
 
 ## Using BotChehara
 
