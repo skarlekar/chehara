@@ -78,7 +78,7 @@ The above picture illustrates the high-level architecture of the application. De
 
 The following sequence diagram illustrates the Slack-bot Installation flow. This flow is also illustrated using red color arrows in the architecture diagram above.
 
-![Installation Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/Installation%20Flow.png)
+![Installation Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/InstallationFlow.png)
 
 1. To use our bot, the user has to be install the bot in their Slack Workspace.
 
