@@ -421,6 +421,12 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 4. You can now verify that your Bot user is added to your workspace. Go to your workspace and under Apps, you should see the Bot user you created.
  ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-4.png)
  
+5. You can also check the Lambda logs in your Serverless project directory at the command prompt by typing:
+ 
+    serverless logs -f installSlack
+
+
+ 
 ## Using BotChehara
 
 ## Application in Action
