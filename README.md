@@ -478,7 +478,7 @@ If the image has a picture of a well-known celebrity you will get their names an
 
 ## Application in Action
 The following are some samples of the application in action.
-![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/application-in-action-1.gif)
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-1.gif)
 
 # Footnotes:
 <a name="aiaas">1</a>: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
