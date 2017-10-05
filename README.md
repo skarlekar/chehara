@@ -520,14 +520,11 @@ If the image has a picture of a well-known celebrity you will get their names an
 # Application in Action
 The following are some samples of the application in action.
 
-
-----------
 Sample 1:
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-1.gif)
 
 
-----------
 Sample 2:
 
 
