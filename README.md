@@ -425,6 +425,7 @@ Now that the preliminary configuration of Slack is done, it is time to build and
  
     serverless logs -f installSlack
 
+6. Go to your DynamoDB table and verify a new Item was created in the *slack teams* table.
 
  
 ## Using BotChehara
