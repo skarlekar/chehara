@@ -20,6 +20,10 @@ def printJson(jsonObject, label):
 
 def verifyUrl(event):
     """Respond to the challenge by returning the challenge back to Slack"""
+    # Not all events are URL Verification events. If this event is an URL
+    # verification event, set the urlVerification boolean to true.
+    urlVerification = False
+
     # Create a stock response
     response = {
         "statusCode": 200
@@ -31,8 +35,9 @@ def verifyUrl(event):
     event_type = body['type']
     # If event is for verifying URL, return the challenge in the body of the response.
     if event_type == 'url_verification':
+        urlVerification = True
         response['body'] = body['challenge']
-    return response
+    return urlVerification, response
 
 
 def verifyToken(event):
@@ -102,21 +107,22 @@ def process(event, context):
     printJson(event, "Incoming event")
 
     # If incoming event is for url verification,  return the challenge in the response.
-    response = verifyUrl(event)
+    urlVerification, response = verifyUrl(event)
 
     # Verify the token from the request. If it not ours, raise an exception
     verifyToken(event)
 
-    body = json.loads(event['body'])
-    slack_event = body['event']
-    slack_event_type = slack_event['type']
-    slack_event_subtype = slack_event['subtype']
-
-    # Only invoke the StepFunction if the event_type and subtype is of interest
-    # to us.
-    if (slack_event_subtype) and (slack_event_type == 'message') and (slack_event_subtype == 'file_share'):
-        # Invoke the StepFunction
-        invokeStepFunction(body)
+    # Invoke the StepFunction only for events that are not URL verification.
+    if (not urlVerification):
+        body = json.loads(event['body'])
+        slack_event = body['event']
+        slack_event_type = slack_event['type']
+        slack_event_subtype = slack_event['subtype']
+        # Only invoke the StepFunction if the event_type and subtype is of interest
+        # to us.
+        if (slack_event_subtype) and (slack_event_type == 'message') and (slack_event_subtype == 'file_share'):
+            # Invoke the StepFunction
+            invokeStepFunction(body)
 
     printJson(response, "Return Response")
     print("****** Returning response now.")

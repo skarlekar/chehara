@@ -1,0 +1,68 @@
+title BotChehara Installation Flow
+
+User->+BotHomePage: Add Bot to Workspace
+BotHomePage->+Slack: Install Request
+Slack->+BotInstaller: Notify Request with temp Code
+BotInstaller->+Slack: Request Access Token with Code
+Slack-->-BotInstaller: Access Token & Team Data
+BotInstaller->DynamoDB: Save Token & Team Data
+BotInstaller-->-Slack: HTTP 302 & Status code
+Slack-->-BotHomePage: Status
+BotHomePage-->-User: Status
+
+
+https://zfzal7y3c3.execute-api.us-east-1.amazonaws.com/dev/events
+
+{
+    "body": "{\"token\":\"FF9H9jGEyxftRtz76F6zRTYO\",\"challenge\":\"8VphRW5dEbpl8bS5vnwrnaAj9hq6h6s5dJMIhNg2exkUgWOaQ7Q6\",\"type\":\"url_verification\"}", 
+    "headers": {
+        "Accept": "*/*", 
+        "Accept-Encoding": "gzip,deflate", 
+        "CloudFront-Forwarded-Proto": "https", 
+        "CloudFront-Is-Desktop-Viewer": "true", 
+        "CloudFront-Is-Mobile-Viewer": "false", 
+        "CloudFront-Is-SmartTV-Viewer": "false", 
+        "CloudFront-Is-Tablet-Viewer": "false", 
+        "CloudFront-Viewer-Country": "US", 
+        "Content-Type": "application/json", 
+        "Host": "zfzal7y3c3.execute-api.us-east-1.amazonaws.com", 
+        "User-Agent": "Slackbot 1.0 (+https://api.slack.com/robots)", 
+        "Via": "1.1 878d418a2c34e35a596bff237b082f5c.cloudfront.net (CloudFront)", 
+        "X-Amz-Cf-Id": "P2dpiUF1BFptXubZUMJPGOyW0-7B2tsIdhN1XuE-iFATRDG1co9Kig==", 
+        "X-Amzn-Trace-Id": "Root=1-59d66f29-44bdf8f01a62aba557621d57", 
+        "X-Forwarded-For": "54.173.160.80, 54.182.235.91", 
+        "X-Forwarded-Port": "443", 
+        "X-Forwarded-Proto": "https"
+    }, 
+    "httpMethod": "POST", 
+    "isBase64Encoded": false, 
+    "path": "/events", 
+    "pathParameters": null, 
+    "queryStringParameters": null, 
+    "requestContext": {
+        "accountId": "099098322104", 
+        "apiId": "zfzal7y3c3", 
+        "httpMethod": "POST", 
+        "identity": {
+            "accessKey": null, 
+            "accountId": null, 
+            "apiKey": "", 
+            "caller": null, 
+            "cognitoAuthenticationProvider": null, 
+            "cognitoAuthenticationType": null, 
+            "cognitoIdentityId": null, 
+            "cognitoIdentityPoolId": null, 
+            "sourceIp": "54.173.160.80", 
+            "user": null, 
+            "userAgent": "Slackbot 1.0 (+https://api.slack.com/robots)", 
+            "userArn": null
+        }, 
+        "path": "/dev/events", 
+        "requestId": "a4a4d6dc-a9f4-11e7-b25d-d7b84443606c", 
+        "resourceId": "wgv7wr", 
+        "resourcePath": "/events", 
+        "stage": "dev"
+    }, 
+    "resource": "/events", 
+    "stageVariables": null
+}

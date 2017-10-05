@@ -246,7 +246,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-installSlack",
               "Handler": "install_slack.process",
@@ -287,14 +287,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "InstallSlackLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "InstallSlackLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "InstallSlackLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be called when a user installs our bot for the first time."
             }
           },
@@ -305,7 +305,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-handleEvents",
               "Handler": "handle_events.process",
@@ -346,14 +346,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HandleEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "HandleEventsLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HandleEventsLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be called whenever Slack calls our API Gateway webhook on an event."
             }
           },
@@ -364,7 +364,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-processEvents",
               "Handler": "process_events.process",
@@ -405,14 +405,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ProcessEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "ProcessEventsLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ProcessEventsLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be invoked by the StepFunction to start the processing of event."
             }
           },
@@ -423,7 +423,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectCelebrity",
               "Handler": "detect_celebrity.process",
@@ -464,14 +464,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectCelebrityLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "DetectCelebrityLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectCelebrityLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be invoked by the StepFunction to detect celebrities in the given image."
             }
           },
@@ -482,7 +482,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectLandmark",
               "Handler": "detect_landmark.process",
@@ -523,14 +523,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectLandmarkLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "DetectLandmarkLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectLandmarkLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be invoked by the StepFunction to detect landmarks in the given image."
             }
           },
@@ -541,7 +541,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-detectText",
               "Handler": "detect_text.process",
@@ -582,14 +582,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DetectTextLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "DetectTextLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DetectTextLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be invoked by the StepFunction to detect text in the given image."
             }
           },
@@ -600,7 +600,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z/chehara.zip"
+                "S3Key": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z/chehara.zip"
               },
               "FunctionName": "chehara-dev-postMessage",
               "Handler": "post_message.process",
@@ -641,14 +641,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "PostMessageLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k": {
+          "PostMessageLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PostMessageLambdaFunction"
               },
-              "CodeSha256": "oM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabr+kZ6+k=",
+              "CodeSha256": "MTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg=",
               "Description": "This Lambda will be invoked by the StepFunction to post the results of detection in the Slack channel."
             }
           },
@@ -811,7 +811,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1507164953658": {
+          "ApiGatewayDeployment1507226559795": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -922,43 +922,43 @@
           "InstallSlackLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "InstallSlackLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "InstallSlackLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "HandleEventsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HandleEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "HandleEventsLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "ProcessEventsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ProcessEventsLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "ProcessEventsLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "DetectCelebrityLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectCelebrityLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "DetectCelebrityLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "DetectLandmarkLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectLandmarkLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "DetectLandmarkLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "DetectTextLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DetectTextLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "DetectTextLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "PostMessageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PostMessageLambdaVersionoM8d4Px3ekaSQao3Efznral0j8jhUC9zQaabrkZ6k"
+              "Ref": "PostMessageLambdaVersionMTfLc6ETzGfHTNZ79n8FEqqUaxkH4aqHQMAoTpTn0Mg"
             }
           },
           "MyStateMachineArn": {
@@ -1217,7 +1217,7 @@
     "artifact": "/Users/skarlekar/Git Repos/chehara/.serverless/chehara.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/chehara/dev/1507164953444-2017-10-05T00:55:53.444Z",
+    "artifactDirectoryName": "serverless/chehara/dev/1507226559465-2017-10-05T18:02:39.465Z",
     "artifact": "chehara.zip"
   }
 }
