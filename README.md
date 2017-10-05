@@ -427,12 +427,60 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 
 6. In addition you can go to your DynamoDB table and verify a new Item was created in the *slack teams* table.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-5.png)
- 
+  
+## Configure Event Webhook
+For Slack to send notify the bot with events in the channels that it subscribed to, the following must happen:
+
+1. Set Permission Scope: Configure the Slack APIs the bot is allowed to use. 
+2. Set Event Subscriptions: Indicate which events that Slack will notify to the bot.
+3. Invite Bot: Invite the bot to a channel to initiate conversation.  
+
+### Permission Scope
+1. In the *OAuth & Permissions* section of your App,  got the *Scopes* section. In the *Select Permission Scopes* dropdown choose the following:
+
+	1. *Send Messages as your-bot-name*
+	2. *Access the workspace’s files, comments, and associated information*
+
+2. Click the *Save Changes* button. You will get a notification to reinstall your app. Click the notification to reinstall your app and authorize the change. Your configuration should look like:
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/configure-web-event-1.png)
+
+### Enable Events
+1. From your command line where you built & deployed the serverless framework, copy the POST method. This is the URL that ends with '*events*'.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/enable-events-1.png)
+
+2. Go to the *Event Subscriptions* section of your app and turn *Enable Events* to *on*.
+
+3. Paste the events URL in the *Request URL* field. 
+
+4. Slack will immediately verify the URL. If everything goes well, you should get a *verified* confirmation.
+
+5. In the *Subscribe to Bot Events* section, select the *message.channels ev*ent.
+
+6. Make sure you click on the *Save Changes* button.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/enable-events-2.png)
+
+### Invite Bot
+For your bot to be useful, you must invite the bot into a channel. For this exercise we will invite the bot in the General channel in your workspace by typing:
+
+    /invite @name-of-your bot
+
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/invite-bot-1.png)
+
 ## Using BotChehara
+You are now ready to start using the bot. 
+
+Go to the general channel in your Slack workspace. Upload or drag and drop a picture into the channel.  Witness the magic of your bot.
+
+If the image has a picture of a well-known celebrity you will get their names and link to their biography. If there are famous landmarks, you should get the name of the landmark and a Google map link along with it.
+
+**Caution**: Make sure your image size is lesser than 5MB. Most of the cognitive services does not accept large images.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/bot-usage-1.png)
 
 ## Application in Action
+The following are some samples of the application in action.
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/application-in-action-1.gif)
 
 # Footnotes:
 <a name="aiaas">1</a>: AIaaS - Artificial Intelligence as a Service is a packaged, easy-to-use cognitive service offered by many leading cloud providers to perform natural language processing, image recognition, speech synthesis and other services that involves artificial intelligence. To use these services you don't have to be an expert on artificial intelligence or machine learning skills.
 
-More documentation to follow soon.
+
