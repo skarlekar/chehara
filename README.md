@@ -33,6 +33,7 @@ The above picture illustrates the high-level architecture of the application. De
 The following sequence diagram illustrates the Slack-bot Installation flow. This flow is also illustrated using red color arrows in the architecture diagram above.
 
 ![Installation Flow Sequence Diagram](https://github.com/skarlekar/chehara/blob/master/Resources/Installation%20Flow.png)
+
 1. To use our bot, the user has to be install the bot in their Slack Workspace. 
 
 2. Installation begins when the user clicks the *#Add to Slack* button in the installation page.
@@ -114,6 +115,10 @@ If the report contains text information, it will extract the text and  enrich th
 1. Google Vision is not able to recognize text in languages other than English.
 2. Google Vision fails to detect text if the text content is skewed. ie., the text has to be laid out horizontally in the image.
 3. Some images contain extraneous text that is not visible to the naked eye. This data comes out as textual content which has beleaguered me. Could this be watermark data? I could not tell.
+
+
+----------
+
 
 # Setup Instructions
 
@@ -212,6 +217,7 @@ For further reference, go to [ObjectPath](http://objectpath.org/reference.html) 
 
 ## Setup Amazon AWS 
 1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
+
 2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
 ## Install node.js and Serverless framework
@@ -302,12 +308,15 @@ To start using Slack's API, create a Slack App. This will provide us the tokens 
 1. Go to you Slack workspace using and click the dropdown next to your Slack workspace name.
 
 2. Select *Manage Apps* in the menu dropdown next to your Slack workspace name.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-1.png)
 
 3. In the *Manage Apps* page, click on *Build* to build a new application.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-2.png)
 
 4. In the *Build* page, click on *Start Building* button.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-3.png)
 
 5. In the *Create a Slack App* form, enter a name for your bot under the *App Name* field.
@@ -315,15 +324,19 @@ To start using Slack's API, create a Slack App. This will provide us the tokens 
 6. In the Development Slack Workspace field, select the name of your workspace.
 
 7. Click on *Create App* to create your Slack application.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-4.png)
 
 8. Once your Slack app is created, it is time to make note of your application credentials under the App Credentials section. Use this information to update the [setEnv.sh](https://github.com/skarlekar/chehara/blob/master/setEnv.sh) file.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-5.png)
  
 9. Install a 512x512 size PNG file as icon for your bot in the *Display Information* section.
- ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-7.png)
+
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-7.png)
  
 10. Note: Do not click on *Distribute App* in the *Manage Distribution* section. We will do this using a custom button to manage the OAuth process.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Build-app-6.png)
 
 Congratulations for creating your Slack application and obtaining its credentials.
@@ -340,11 +353,13 @@ Follow the instructions below to add the Bot User:
 3. Click on *Bot Users* in the side bar menu.
 
 4. In the *Bot User* page, click on *Add a Bot User* button.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Install-Bot-User-1.png)
 
 5. In the following page, the Display name and Default username comes pre-filled. 
 
 6. Click on *Add Bot User* to add a bot to your application.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Install-Bot-User-2.png)
 
 You have now associated a Bot User to your app. This Bot User will be the brain of your app.
@@ -355,12 +370,15 @@ For users to invite our Bot to their channels and have the Bot talk to our servi
 1. Let us start by clicking on *Your Apps* page to ensure that you are in http://api.slack.com/apps page.
 
 2. Scroll down to the Authentication section of this page.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-1.png)
 
 3. Click on the *Slack Button*. This will take us to the API docs for the Slack button.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-2.png)
 
 4. Scroll down to the *Add the Slack Button* section of the page. Ensure that the name of your Bot is selected in the Drop-down.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-3.png)
 
 5. Ensure that only the *bot* button is checked.
@@ -368,17 +386,21 @@ For users to invite our Bot to their channels and have the Bot talk to our servi
 6. Copy the code snippet that contains your client id.
 
 7. Go to the [slack-install-site/index.html](https://github.com/skarlekar/chehara/blob/master/slack-install-site/index.html) web-page and replace the section from line 30-34 with the copied code snippet. 
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-4.png)
 
 8. Create a S3 bucket and prepare it for static website hosting.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-5.png)
 
 9. Install this website in a S3 bucket of your choice and make sure that the S3 bucket is configured to serve as a website.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/Add-to-Slack-Button-6.png)
 
 10. Make a note of the public URL for the *index.html* in your S3 bucket. 
 
 11. In your serverless.yml file update the *INSTALL_SUCCESS_URL* and *INSTALL_ERROR_URL* with the path to your *index.html*. Add *#success* at the end of the Success URL and *#error* at the end of the Error URL as shown below.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/serverless-yml-1.png)
 
 ## Build & Deploy BotChehara
@@ -396,6 +418,7 @@ Now that the preliminary configuration of Slack is done, it is time to build and
     sls deploy --verbose
 
 4. You should get an output that should state that the service was successfully published as shown below.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/build-and-deploy-chehara-1.png)
 
 5. Note down the Install endpoint which uses HTTP GET.
@@ -406,6 +429,7 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 2. In the *Redirect URLs* section, select *Add a new Redirect URL* and paste your install URL. Click on *Add* button.
 
 3. Finally, click on *Save URLs* to save the setting.
+
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/install-url-1.png)
 
 ## Test *#Add to Slack* Function
@@ -474,7 +498,11 @@ For your bot to be useful, you must invite the bot into a channel. For this exer
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/invite-bot-1.png)
 
-## Using BotChehara
+
+----------
+
+
+# Using BotChehara
 You are now ready to start using the bot. 
 
 Go to the general channel in your Slack workspace. Upload or drag and drop a picture into the channel.  Witness the magic of your bot.
@@ -485,7 +513,11 @@ If the image has a picture of a well-known celebrity you will get their names an
 
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/bot-usage-1.png)
 
-## Application in Action
+
+----------
+
+
+# Application in Action
 The following are some samples of the application in action.
 
 
@@ -497,6 +529,9 @@ Sample 1:
 
 ----------
 Sample 2:
+
+
+----------
 
 
 # Footnotes:
