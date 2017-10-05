@@ -527,6 +527,7 @@ Sample 1:
 
 Sample 2:
 
+![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/app-in-action-2.gif)
 
 ----------
 
