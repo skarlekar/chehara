@@ -418,6 +418,9 @@ Now that the preliminary configuration of Slack is done, it is time to build and
 3. If everything goes well, you should see a success message.
 ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-3.png)
 
+4. You can now verify that your Bot user is added to your workspace. Go to your workspace and under Apps, you should see the Bot user you created.
+ ![enter image description here](https://github.com/skarlekar/chehara/blob/master/Resources/test-add-to-slack-4.png)
+ 
 ## Using BotChehara
 
 ## Application in Action
