@@ -267,7 +267,7 @@ For further reference, go to [ObjectPath](http://objectpath.org/reference.html) 
 2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
 ## Install node.js and Serverless framework
-Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework.
+Serverless framework is a node.js application. To use Serverless framework and run the BotChehara application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework.
 
 Ensure your Serverless framework is operational using the following:
 
